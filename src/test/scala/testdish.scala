@@ -59,7 +59,7 @@ class testdish extends FlatSpec with Matchers {
     val N = 1000000000
     var start = System.currentTimeMillis
     println("STARTING a lot of adding; N = "+N)
-    val dish = new Dish("testfile.dish", 16, 1024*1024*512, 24)
+    val dish = new Dish("testfile.dish", 16, 1024*1024*24, 24)
     println("done initiating empty map, elapsed: "+(System.currentTimeMillis-start)/1000.0+"s")
     start = System.currentTimeMillis
     var i = 0
@@ -72,8 +72,8 @@ class testdish extends FlatSpec with Matchers {
         dish.put(k, v)
         i += 1
       }
-      if(i % 10000000 == 0) {
-        println("inserted " + i + "items, elapsed:" + (System.currentTimeMillis-start)/1000.0+"s")
+      if(i % 100000 == 0) {
+        println("inserted " + i + " items, elapsed:" + (System.currentTimeMillis-start)/1000.0+"s")
       }
     }
     println("done generating randoms/adding to dish, elapsed: "+(System.currentTimeMillis-start)/1000.0+"s")
