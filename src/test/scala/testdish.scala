@@ -23,7 +23,7 @@ class testdish extends FlatSpec with Matchers {
     val N = 1000000000
     var start = System.currentTimeMillis
     println("STARTING a lot of adding; N = "+N)
-    val dish = new Dish("/Volumes/extssd/testfile.dish", 16, 1024*1024*1024, 24)
+    val dish = new Dish("/Volumes/extssd/testfile.dish", 16, 1024*1024*512, 24)
     println("done initiating empty map, elapsed: "+(System.currentTimeMillis-start)/1000.0+"s")
     start = System.currentTimeMillis
     var i = 0
